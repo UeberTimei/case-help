@@ -1,0 +1,18 @@
+@mixin text-style(
+  $font-weight,
+  $font-size,
+  $line-height: null,
+  $letter-spacing: null
+) {
+  font-family: "GothamPro", sans-serif;
+  font-weight: $font-weight;
+  font-size: $font-size;
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing;
+  }
+}

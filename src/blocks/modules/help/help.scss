@@ -19,10 +19,7 @@
   color: rgb(255, 255, 255);
   margin-bottom: 60px;
   font-family: "GothamPro", sans-serif;
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 36.4px;
-  letter-spacing: 1.5px;
+  @include text-style(400, 28px, 36.4px, 1.5px);
   max-width: 475px;
 }
 .smartphones-img {
@@ -31,7 +28,7 @@
 
 .help-curve {
   position: absolute;
-  bottom: 0;
+  bottom: -3px;
   left: 50%;
   transform: translateX(-50%);
 }
