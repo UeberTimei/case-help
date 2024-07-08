@@ -13,7 +13,45 @@
 // БЭМ-блоки
 @import "../blocks/modules";
 
+body::-webkit-scrollbar {
+  display: none;
+}
 .wrapper {
   max-width: 1272px;
   margin: 0 auto;
+}
+
+@font-face {
+  font-family: "GothamPro";
+  src: url("../fonts/gotham-pro/gothampro_light.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GothamPro";
+  src: url("../fonts/gotham-pro/gothampro_light.ttf") format("ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GothamPro";
+  src: url("../fonts/gotham-pro/gothampro_medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GothamPro";
+  src: url("../fonts/gotham-pro/gothampro_bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GothamPro";
+  src: url("../fonts/gotham-pro/gothampro_black.ttf") format("ttf");
+  font-weight: 900;
+  font-style: normal;
 }
