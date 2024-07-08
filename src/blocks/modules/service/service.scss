@@ -1,0 +1,50 @@
+.service {
+  position: relative;
+  .service-curve {
+    position: absolute;
+    top: -115px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .wrapper {
+    .service-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      .service-phone-thumb {
+        margin-left: 95px;
+      }
+      .service-info {
+        margin-top: 215px;
+        margin-left: 130px;
+        .service-title {
+          @include text-style(900, 43px);
+          margin-bottom: 56px;
+        }
+        .service-list {
+          display: flex;
+          flex-direction: column;
+          gap: 45px;
+          .service-list-el {
+            position: relative;
+            margin-left: 40px;
+            max-width: 390px;
+            text-wrap: balance;
+            @include text-style(400, 22px, 33px);
+            &:before {
+              content: "";
+              width: 22px;
+              height: 22px;
+              background-image: url("../../../img/sprites/bullet.svg");
+              background-size: cover;
+              position: absolute;
+              left: -37px;
+              top: 15px;
+              transform: translateY(-50%);
+              z-index: 1000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
