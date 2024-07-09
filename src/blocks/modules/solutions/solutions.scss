@@ -1,0 +1,126 @@
+.solutions {
+  .wrapper {
+    .solutions-wrapper {
+      .solutions-title {
+        margin-bottom: 80px;
+        padding-top: 71px;
+        @include text-style(900, 45px, 58.5px);
+        text-align: center;
+      }
+      .solutions-flex {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 146px;
+        .solutions-flex-info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 74px;
+
+          .solutions-flex-title {
+            max-width: 472px;
+            text-wrap: balance;
+            @include text-style(900, 36px, 46.8px);
+          }
+          .solutions-flex-text {
+            max-width: 636px;
+            padding-left: 45px;
+            @include text-style(400, 22px, 33px);
+          }
+        }
+        .solutions-flex-phones {
+          background-color: #232323;
+          height: 674px;
+          border-radius: 30px;
+          overflow: hidden;
+          position: relative;
+          padding: 0 130px;
+          .solutions-flex-phones-thumb {
+            .solutions-flex-1 {
+              position: absolute;
+              top: 0px;
+              left: 96px;
+            }
+            .solutions-flex-2 {
+              position: absolute;
+              right: 97px;
+              bottom: -7px;
+              z-index: 1000;
+            }
+            .solutions-dev-2 {
+              position: absolute;
+              bottom: 5px;
+              right: 6px;
+              z-index: 1000;
+            }
+          }
+        }
+      }
+
+      .solutions-search {
+        margin-bottom: 150px;
+        .solutions-search-upper-text {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 60px;
+          .solutions-search-upper-title {
+            flex: 1;
+            @include text-style(900, 36px, 46.8px);
+          }
+          .solutions-search-upper-text-content {
+            flex: 0.9;
+            padding-left: 42px;
+            @include text-style(500, 22px, 33px);
+          }
+        }
+        .solutions-search-filters {
+          display: flex;
+          flex-direction: row-reverse;
+          .solutions-search-filters-list {
+            // flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            max-width: 584px;
+            padding-left: 37px;
+            text-wrap: balance;
+            .solutions-search-filters-item {
+              position: relative;
+              &:after {
+                content: "";
+                width: 22px;
+                height: 22px;
+                background-image: url("../../../img/sprites/bullet.svg");
+                background-size: cover;
+                position: absolute;
+                left: -37px;
+                top: 15px;
+                transform: translateY(-50%);
+                z-index: 1;
+              }
+              @include text-style(400, 22px, 33px);
+              b {
+                @include text-style(700, 22px, 33px);
+              }
+            }
+          }
+          .solutions-search-phone-thumb {
+            // overflow: hidden;
+            position: relative;
+            flex: 1;
+            height: 778px;
+            .solutions-search-phone-img {
+              flex: 1;
+              height: 100%;
+              position: absolute;
+              top: 40%;
+              left: 40%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
