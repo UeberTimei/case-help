@@ -1,0 +1,45 @@
+.tasks {
+  .wrapper {
+    .tasks-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      .tasks-phone-thumb {
+        margin-top: -40px;
+        margin-left: -30px;
+        z-index: 1000000;
+        .tasks-phone-decorations {
+          position: relative;
+          .tasks-skills-img {
+            position: absolute;
+            top: -825px;
+            left: 150px;
+          }
+          .tasks-cities-img {
+            position: absolute;
+            top: -505px;
+            left: 120px;
+          }
+          .tasks-stand-img {
+            z-index: -100;
+            position: absolute;
+            top: -90px;
+            left: 190px;
+          }
+        }
+      }
+      .tasks-info {
+        margin-top: 177px;
+        margin-left: 135px;
+        .tasks-title {
+          @include text-style(900, 45px, 58.5px);
+          margin-bottom: 16px;
+        }
+        .tasks-text {
+          @include text-style(400, 22px, 33px);
+          max-width: 450px;
+          text-wrap: balance;
+        }
+      }
+    }
+  }
+}
