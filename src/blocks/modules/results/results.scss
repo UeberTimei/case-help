@@ -1,0 +1,63 @@
+.service {
+  position: relative;
+  background-color: #232323;
+  padding-top: 270px;
+  padding-bottom: 150px;
+  .service-curve {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    width: 100%;
+  }
+  .wrapper {
+    .service-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      .service-phone-thumb {
+        padding-top: -300px;
+        margin-left: 95px;
+      }
+      .service-info {
+        margin-top: 60px;
+        margin-left: 190px;
+        .service-title {
+          color: white;
+          @include text-style(700, 45px, 58.5px);
+          margin-bottom: 50px;
+          margin-left: 5px;
+        }
+        .service-list {
+          display: flex;
+          flex-direction: column;
+          gap: 33px;
+          .service-list-el {
+            position: relative;
+            margin-left: 40px;
+            max-width: 390px;
+            color: white;
+            @include text-style(400, 22px, 33px);
+            &:nth-child(1) {
+              white-space: nowrap;
+            }
+            b {
+              font-weight: 700;
+            }
+            &:before {
+              content: "";
+              width: 22px;
+              height: 22px;
+              background-image: url("../../../img/sprites/bullet.svg");
+              background-size: cover;
+              position: absolute;
+              left: -37px;
+              top: 15px;
+              transform: translateY(-50%);
+              z-index: 1000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
