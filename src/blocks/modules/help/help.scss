@@ -19,8 +19,11 @@
   color: rgb(255, 255, 255);
   margin-bottom: 60px;
   font-family: "GothamPro", sans-serif;
-  @include text-style(400, 28px, 36.4px, 1.5px);
+  @include text-style(400, 28px, 36.4px);
   max-width: 475px;
+}
+.smartphones-thumb {
+  margin-left: 2px;
 }
 .smartphones-img {
   margin-top: -100px;

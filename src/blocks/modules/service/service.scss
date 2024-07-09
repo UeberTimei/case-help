@@ -2,9 +2,10 @@
   position: relative;
   .service-curve {
     position: absolute;
-    top: -115px;
+    top: -85px;
     left: 50%;
     transform: translateX(-50%);
+    width: 100%;
   }
   .wrapper {
     .service-wrapper {
@@ -17,13 +18,13 @@
         margin-top: 215px;
         margin-left: 130px;
         .service-title {
-          @include text-style(900, 43px);
+          @include text-style(900, 43px, 43px);
           margin-bottom: 56px;
         }
         .service-list {
           display: flex;
           flex-direction: column;
-          gap: 45px;
+          gap: 43px;
           .service-list-el {
             position: relative;
             margin-left: 40px;
