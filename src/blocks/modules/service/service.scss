@@ -1,5 +1,6 @@
 .service {
   position: relative;
+  margin-bottom: 200px;
   .service-curve {
     position: absolute;
     top: -85px;
@@ -13,6 +14,10 @@
       grid-template-columns: repeat(2, 1fr);
       .service-phone-thumb {
         margin-left: 95px;
+        position: relative;
+        .service-phone-img {
+          position: absolute;
+        }
       }
       .service-info {
         margin-top: 215px;
@@ -42,6 +47,72 @@
               top: 15px;
               transform: translateY(-50%);
               z-index: 1000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1351px) {
+  .service {
+    padding-bottom: 200px;
+    .wrapper {
+      .service-wrapper {
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 1fr);
+        .service-phone-thumb {
+          margin: 0;
+          grid-row: 2;
+          .service-phone-img {
+            top: 50%;
+            left: 50%;
+            transform: translate(-43%, -31%) scale(0.9);
+          }
+        }
+        .service-info {
+          margin-top: 100px;
+          margin-left: 25px;
+          .service-title {
+            margin-bottom: 40px;
+            @include text-style(900, 36px, 46.8px);
+          }
+          .service-list {
+            gap: 20px;
+            .service-list-el {
+              max-width: 100%;
+              @include text-style(400, 22px, 28px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .service {
+    margin-bottom: 0px;
+    padding-bottom: 100px;
+    .service-curve {
+      display: none;
+    }
+    .wrapper {
+      .service-wrapper {
+        .service-phone-thumb {
+          .service-phone-img {
+            width: 220px;
+          }
+        }
+        .service-info {
+          margin-top: 53px;
+          .service-title {
+            @include text-style(900, 20px, 26px);
+            margin-bottom: 29px;
+          }
+          .service-list {
+            .service-list-el {
+              @include text-style(400, 16px, 24px);
             }
           }
         }

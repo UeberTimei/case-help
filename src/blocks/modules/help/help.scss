@@ -35,3 +35,98 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+@media screen and (max-width: 1351px) {
+  .help {
+    padding-top: 0;
+    padding-left: 50px;
+    padding-bottom: 650px;
+    .wrapper {
+      .help-wrapper {
+        flex-direction: column;
+        .help-info {
+          .help-info-text {
+            max-width: 800px;
+            @include text-style(400, 24px, 31.2px);
+          }
+          .help-info-google-thumb {
+            .help-info-google-link {
+              .help-info-google-img {
+                margin-left: 18.5px;
+                transform: scale(1.15);
+              }
+            }
+          }
+        }
+        .help-img {
+          align-self: center;
+          .smartphones-thumb {
+            position: relative;
+            .smartphones-img {
+              position: absolute;
+              top: -20px;
+              left: -435px;
+              transform: scale(0.7);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .help {
+    padding-left: 12px;
+    padding-top: 53px;
+    padding-bottom: 100px;
+    .wrapper {
+      .help-wrapper {
+        margin-left: 16px;
+        flex-direction: column;
+        .help-info {
+          .help-info-logo-thumb {
+            height: auto;
+            .help-info-logo-img {
+              width: 207px;
+              margin: 14px 0;
+            }
+          }
+          .help-info-text {
+            max-width: 90%;
+            @include text-style(400, 18px, 23.4px);
+            margin-bottom: 18px;
+          }
+          .help-info-google-thumb {
+            .help-info-google-link {
+              .help-info-google-img {
+                margin-left: 0;
+                transform: translateX(-15%) scale(0.7);
+              }
+            }
+          }
+        }
+        .help-img {
+          align-self: center;
+          // width: 100%;
+          // height: auto;
+          margin-left: 20%;
+          .smartphones-thumb {
+            margin: 0;
+            position: relative;
+            // max-width: 10%;
+            width: 20%;
+            height: auto;
+            .smartphones-img {
+              margin: 0;
+              width: 280px;
+              height: 280px;
+              position: relative;
+              transform: translate(150%, 5vh);
+            }
+          }
+        }
+      }
+    }
+  }
+}

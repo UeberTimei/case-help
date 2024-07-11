@@ -1,37 +1,39 @@
-.service {
+.results {
   position: relative;
   background-color: #232323;
   padding-top: 270px;
   padding-bottom: 150px;
-  .service-curve {
+  .results-curve {
     position: absolute;
-    top: -30px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%) rotate(180deg);
-    width: 100%;
+    transform: translate(-50%, -475%) rotate(180deg);
+    width: 101%;
+    overflow: hidden;
   }
   .wrapper {
-    .service-wrapper {
+    .results-wrapper {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      .service-phone-thumb {
+      .results-phone-thumb {
+        width: 100%;
         padding-top: -300px;
         margin-left: 95px;
       }
-      .service-info {
+      .results-info {
         margin-top: 60px;
         margin-left: 190px;
-        .service-title {
+        .results-title {
           color: white;
           @include text-style(700, 45px, 58.5px);
           margin-bottom: 50px;
           margin-left: 5px;
         }
-        .service-list {
+        .results-list {
           display: flex;
           flex-direction: column;
           gap: 33px;
-          .service-list-el {
+          .results-list-el {
             position: relative;
             margin-left: 40px;
             max-width: 390px;
@@ -54,6 +56,116 @@
               top: 15px;
               transform: translateY(-50%);
               z-index: 1000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1351px) {
+  .results {
+    position: relative;
+    background-color: #232323;
+    padding-top: 70px;
+    padding-bottom: 450px;
+    .results-curve {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -10%) rotate(180deg);
+      width: 100%;
+      height: auto;
+    }
+    .wrapper {
+      .results-wrapper {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 1fr);
+        .results-phone-thumb {
+          margin-left: 0;
+          grid-row: 2;
+          position: relative;
+          .results-phone-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-62%, -12%);
+          }
+        }
+        .results-info {
+          margin: 0;
+          margin-top: 110px;
+          margin-left: 60px;
+          .results-title {
+            margin-bottom: 25px;
+            @include text-style(700, 36px, 46.8px);
+          }
+          .results-list {
+            gap: 30px;
+            text-wrap: balance;
+            .results-list-el {
+              margin-left: 50px;
+              max-width: 75%;
+              text-wrap: wrap;
+              @include text-style(400, 20px, 30px);
+              br {
+                display: none;
+              }
+              &:before {
+                left: -45px;
+              }
+              &:nth-child(1) {
+                white-space: wrap;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .results {
+    width: 100%;
+    padding-bottom: 80vw;
+    .wrapper {
+      .results-wrapper {
+        .results-phone-thumb {
+          width: 100%;
+          height: auto;
+          .results-phone-img {
+            max-width: 70%;
+            height: auto;
+            transform: translate(-50%, -5%);
+          }
+        }
+        .results-info {
+          margin-top: 21px;
+          margin-left: 21px;
+          .results-title {
+            margin-bottom: 13px;
+            @include text-style(700, 20px, 26px);
+          }
+          .results-list {
+            gap: 12px;
+            .results-list-el {
+              max-width: 90%;
+              text-wrap: wrap;
+              margin-left: 40px;
+              padding-right: 15px;
+              @include text-style(400, 16px, 24px);
+              br {
+                display: none;
+              }
+              &:before {
+                left: -35px;
+              }
+              &:nth-child(1) {
+                white-space: wrap;
+              }
             }
           }
         }
