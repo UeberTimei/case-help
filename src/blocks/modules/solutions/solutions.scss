@@ -227,6 +227,7 @@
           @include text-style(900, 22px, 28.6px);
         }
         .solutions-flex {
+          padding-bottom: 7%;
           .solutions-flex-info {
             .solutions-flex-title {
               @include text-style(900, 20px, 26px);
@@ -261,27 +262,33 @@
         }
 
         .solutions-search {
+          margin: 0;
+          margin-bottom: 130px;
           .solutions-search-upper-text {
             .solutions-search-upper-title {
-              @include text-style(900, 36px, 46.8px);
-              br {
-              }
+              @include text-style(900, 20px, 26px);
             }
             .solutions-search-upper-text-content {
-              @include text-style(500, 22px, 33px);
+              @include text-style(500, 16px, 24px);
             }
           }
           .solutions-search-filters {
+            height: 70vh;
             .solutions-search-filters-list {
+              gap: 7px;
               .solutions-search-filters-item {
-                @include text-style(400, 20px, 33px);
+                text-wrap: wrap;
+                @include text-style(400, 16px, 24px);
                 b {
-                  @include text-style(700, 20px, 33px);
+                  @include text-style(700, 16px, 24px);
                 }
               }
             }
             .solutions-search-phone-thumb {
               .solutions-search-phone-img {
+                width: 80%;
+                height: auto;
+                max-width: 360px;
               }
             }
           }

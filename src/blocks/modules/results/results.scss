@@ -173,3 +173,113 @@
     }
   }
 }
+
+@media screen and (max-width: 1351px) {
+  .results {
+    position: relative;
+    background-color: #232323;
+    padding-top: 70px;
+    padding-bottom: 450px;
+    .results-curve {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -10%) rotate(180deg);
+      width: 100%;
+      height: auto;
+    }
+    .wrapper {
+      .results-wrapper {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 1fr);
+        .results-phone-thumb {
+          margin-left: 0;
+          grid-row: 2;
+          position: relative;
+          .results-phone-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-62%, -12%);
+          }
+        }
+        .results-info {
+          margin: 0;
+          margin-top: 110px;
+          margin-left: 60px;
+          .results-title {
+            margin-bottom: 25px;
+            @include text-style(700, 36px, 46.8px);
+          }
+          .results-list {
+            gap: 30px;
+            text-wrap: balance;
+            .results-list-el {
+              margin-left: 50px;
+              max-width: 75%;
+              text-wrap: wrap;
+              @include text-style(400, 20px, 30px);
+              br {
+                display: none;
+              }
+              &:before {
+                left: -45px;
+              }
+              &:nth-child(1) {
+                white-space: wrap;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .results {
+    width: 100%;
+    padding-bottom: 80vw;
+    .wrapper {
+      .results-wrapper {
+        .results-phone-thumb {
+          width: 100%;
+          height: auto;
+          .results-phone-img {
+            max-width: 70%;
+            height: auto;
+            transform: translate(-50%, -5%);
+          }
+        }
+        .results-info {
+          margin-top: 21px;
+          margin-left: 21px;
+          .results-title {
+            margin-bottom: 13px;
+            @include text-style(700, 20px, 26px);
+          }
+          .results-list {
+            gap: 12px;
+            .results-list-el {
+              max-width: 90%;
+              text-wrap: wrap;
+              margin-left: 40px;
+              padding-right: 15px;
+              @include text-style(400, 16px, 24px);
+              br {
+                display: none;
+              }
+              &:before {
+                left: -35px;
+              }
+              &:nth-child(1) {
+                white-space: wrap;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
