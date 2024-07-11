@@ -42,10 +42,6 @@ jobs:
         run: |
           npm i -g bem-tools-core
 
-      - name: Set version berry
-        run: |
-          yarn set version berry
-
       - name: Install dependencies
         run: |
           yarn
