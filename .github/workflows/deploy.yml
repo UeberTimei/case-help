@@ -38,13 +38,23 @@ jobs:
         run: |
           npm i -g bem-tools-core
 
+      - name: Yarn Setup
+        uses: DerYeger/yarn-setup-action@v1.0.1
+        with:
+          # The version of Node.js that will be used
+          node-version: '14'
+
+      - name: Set version berry
+        run: |
+          yarn set version berry
+          
       - name: Install dependencies
         run: |
-          npm install
+          yarn
 
       - name: Build the project
         run: |
-          npm run build
+          yarn run build
 
       - name: Navigate to the builded project
         run: |
