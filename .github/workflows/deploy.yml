@@ -18,20 +18,19 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Install Yarn
-      run: npm install -g yarn
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
 
-    - name: Set up Yarn Berry
-      run: |
-        yarn set version stable
-        yarn --version
+    - uses: actions/cache@v2
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
 
-    - name: Install global dependencies
-      run: |
-        yarn global add gulp
-        yarn global add bem-tools-core
-
-    - name: Install project dependencies
+    - name: Install dependencies
       run: yarn install
 
     - name: Build project
