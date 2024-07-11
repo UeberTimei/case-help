@@ -1,4 +1,5 @@
 .tasks {
+  padding-bottom: 400px;
   .wrapper {
     .tasks-wrapper {
       display: grid;
@@ -7,23 +8,30 @@
         margin-top: -40px;
         margin-left: -30px;
         z-index: 1000000;
+        position: relative;
+        .tasks-phone-img {
+          position: absolute;
+        }
         .tasks-phone-decorations {
           position: relative;
           .tasks-skills-img {
             position: absolute;
-            top: -825px;
-            left: 150px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-39%, -14%);
           }
           .tasks-cities-img {
             position: absolute;
-            top: -505px;
-            left: 120px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-47%, 43%);
           }
           .tasks-stand-img {
             z-index: -100;
             position: absolute;
-            top: -90px;
-            left: 190px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 620%);
           }
         }
       }
@@ -38,6 +46,93 @@
           @include text-style(400, 22px, 33px);
           max-width: 450px;
           text-wrap: balance;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1351px) {
+  .tasks {
+    padding-bottom: 470px;
+    .wrapper {
+      .tasks-wrapper {
+        margin-left: 25px;
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 1fr);
+        .tasks-phone-thumb {
+          margin: 0;
+          grid-row: 2;
+          transform: scale(0.95);
+          .tasks-phone-img {
+            top: 50%;
+            left: 50%;
+            transform: translate(-48%, -32%) scale(0.95);
+          }
+          .tasks-phone-decorations {
+            margin-top: -110px;
+            margin-left: 100px;
+            .tasks-stand-img {
+              transform: translate(-50%, 600%);
+            }
+          }
+        }
+        .tasks-info {
+          margin: 0;
+          margin-bottom: 100px;
+          max-width: none;
+          .tasks-title {
+            margin-bottom: 20px;
+            @include text-style(900, 36px, 46.8px);
+          }
+          .tasks-text {
+            max-width: 85%;
+            text-wrap: wrap;
+            @include text-style(400, 22px, 33px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tasks {
+    padding-bottom: 30%;
+    .wrapper {
+      .tasks-wrapper {
+        .tasks-phone-thumb {
+          transform: translateX(-2%);
+          .tasks-phone-img {
+            width: 250px;
+            height: 315px;
+          }
+          .tasks-phone-decorations {
+            .tasks-skills-img {
+              transform: translate(-50%, 20%);
+              width: 200px;
+              height: 275px;
+            }
+            .tasks-cities-img {
+              transform: translate(-60%, 85%);
+              width: 195px;
+              height: 232px;
+            }
+            .tasks-stand-img {
+              width: 120px;
+              height: 46px;
+              transform: translate(-75%, 820%);
+            }
+          }
+        }
+        .tasks-info {
+          margin-bottom: 50px;
+          .tasks-title {
+            @include text-style(900, 20px, 26px);
+          }
+          .tasks-text {
+            @include text-style(400, 16px, 24px);
+          }
         }
       }
     }
