@@ -1,61 +1,40 @@
-# This is a basic workflow to help you get started with Actions
+name: Build and Deploy to GitHub Pages
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build-and-deploy:
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
 
-      - name: Install gulp
-        run: |
-          npm i -g gulp
-          
-      - name: Install bem-tools-core
-        run: |
-          npm i -g bem-tools-core
+    - name: Install global dependencies
+      run: |
+        npm i -g yarn
+        npm i -g gulp
+        npm i -g bem-tools-core
 
-      - name: Yarn Setup
-        uses: DerYeger/yarn-setup-action@v1.0.1
-        with:
-          # The version of Node.js that will be used
-          node-version: '14'
+    - name: Set up Yarn Berry
+      run: yarn set version berry
 
-      - name: Set version berry
-        run: |
-          yarn set version berry
-          
-      - name: Install dependencies
-        run: |
-          yarn
+    - name: Install project dependencies
+      run: yarn install
 
-      - name: Build the project
-        run: |
-          yarn run build
+    - name: Build project
+      run: yarn run build
 
-      - name: Navigate to the builded project
-        run: |
-          cd dist
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        branch: gh-pages
+        folder: dist
