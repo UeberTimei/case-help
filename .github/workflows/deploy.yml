@@ -44,11 +44,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          yarn
+          npm ci
 
       - name: Build the project
         run: |
-          yarn run build
+          npm run build
 
       - name: Navigate to the builded project
         run: |
