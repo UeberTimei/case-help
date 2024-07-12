@@ -18,11 +18,19 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Install Yarn
-      run: npm install -g yarn@berry
+    - name: Install global dependencies
+      run: |
+        npm i -g yarn
+        npm i -g gulp
+        npm i -g bem-tools-core
 
-    - name: Install dependencies
-      run: yarn install
+    - name: Set up Yarn Berry
+      run: yarn set version berry
+
+    - name: Install project dependencies
+      run: |
+        yarn cache clean
+        yarn install
 
     - name: Build project
       run: yarn run build
