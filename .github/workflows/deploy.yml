@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '20'
 
     - name: Install global dependencies
       run: |
@@ -29,7 +29,8 @@ jobs:
 
     - name: Install project dependencies
       run: |
-        yarn cache clean
+        rm -rf node_modules
+        rm yarn.lock
         yarn install
 
     - name: Build project
