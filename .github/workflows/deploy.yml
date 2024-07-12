@@ -18,13 +18,20 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Install Yarn
-      run: npm install -g yarn
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+    - uses: actions/cache@v2
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
 
     - name: Install dependencies
-      run: |
-        yarn install
-        yarn global add gulp bem-tools-core
+      run: yarn install
 
     - name: Build project
       run: yarn run build
