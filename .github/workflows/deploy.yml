@@ -28,7 +28,9 @@ jobs:
       run: yarn set version berry
 
     - name: Install project dependencies
-      run: yarn install
+      run: |
+        yarn cache clean
+        yarn install
 
     - name: Build project
       run: yarn run build
