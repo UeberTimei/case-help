@@ -28,10 +28,7 @@ jobs:
       run: yarn set version berry
 
     - name: Install project dependencies
-      run: |
-        rm -rf node_modules
-        rm yarn.lock
-        yarn install
+      run: yarn install
 
     - name: Build project
       run: yarn run build
