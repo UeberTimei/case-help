@@ -34,8 +34,11 @@ jobs:
       continue-on-error: true
 
     - name: Build project
-      run: yarn run build
-
+      run: |
+        yarn run build
+        sed -i 's|\.\./\.\./\.\./||g' dist/index.html
+        cp decomposition.txt dist/
+        
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
