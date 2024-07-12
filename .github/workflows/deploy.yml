@@ -29,7 +29,9 @@ jobs:
 
     - name: Install project dependencies
       run: |
-        yarn install --ignore-optional
+        yarn cache clean
+        yarn install
+      continue-on-error: true
 
     - name: Build project
       run: yarn run build
